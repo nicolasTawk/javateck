@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="n.midterm_3.addButtonController">
+   <children>
+      <Label layoutX="112.0" layoutY="50.0" prefHeight="23.0" prefWidth="117.0" text="Enter the name: ">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="108.0" layoutY="126.0" prefHeight="23.0" prefWidth="153.0" text="Enter the description:">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="108.0" layoutY="200.0" prefHeight="23.0" prefWidth="117.0" text="Enter the price: ">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Button fx:id="add" layoutX="285.0" layoutY="285.0" mnemonicParsing="false" onAction="#addButton" prefHeight="38.0" prefWidth="117.0" text="add">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <TextField fx:id="nameTextLable" layoutX="261.0" layoutY="49.0" prefHeight="26.0" prefWidth="312.0" />
+      <TextField fx:id="descriptionTextLable" layoutX="261.0" layoutY="125.0" prefHeight="26.0" prefWidth="312.0" />
+      <TextField fx:id="priceTextLable" layoutX="261.0" layoutY="199.0" prefHeight="26.0" prefWidth="312.0" />
+      <Button fx:id="back" layoutX="144.0" layoutY="285.0" mnemonicParsing="false" onAction="#backButton" prefHeight="38.0" prefWidth="117.0" text="back">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

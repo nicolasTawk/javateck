@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="n.midterm_3.batchesController">
+   <children>
+      <TableView fx:id="tableView" layoutX="128.0" layoutY="-1.0" prefHeight="400.0" prefWidth="472.0">
+        <columns>
+          <TableColumn fx:id="ExperationID" prefWidth="103.0" text="ExperationID" />
+          <TableColumn fx:id="ProductID" prefWidth="105.0" text="ProductID" />
+            <TableColumn fx:id="ExpirationDate" prefWidth="145.0" text="ExpirationDate" />
+            <TableColumn fx:id="Quantity" prefWidth="116.0" text="Quantity" />
+        </columns>
+      </TableView>
+      <Button fx:id="removeExpieredProducts" layoutX="6.0" layoutY="14.0" mnemonicParsing="false" onAction="#remove" prefHeight="55.0" prefWidth="109.0" text="remove expiered products" wrapText="true" />
+      <Button fx:id="getExpieringProducts" layoutX="6.0" layoutY="79.0" mnemonicParsing="false" onAction="#get" prefHeight="55.0" prefWidth="109.0" text="get expiering products" wrapText="true" />
+      <Button fx:id="backButton" layoutX="6.0" layoutY="367.0" mnemonicParsing="false" onAction="#back" prefHeight="26.0" prefWidth="115.0" text="back" />
+      <Button fx:id="removeFilters" layoutX="6.0" layoutY="145.0" mnemonicParsing="false" onAction="#removeFilter" prefHeight="55.0" prefWidth="109.0" text="remove filters" />
+   </children>
+</AnchorPane>

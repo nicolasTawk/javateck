@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="404.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="n.midterm_3.listController">
+   <children>
+      <TableView fx:id="tableViewProduct" layoutX="136.0" layoutY="47.0" prefHeight="353.0" prefWidth="464.0">
+        <columns>
+          <TableColumn fx:id="ProductID" prefWidth="63.0" text="ProductID" />
+          <TableColumn fx:id="Name" prefWidth="97.0" text="Name" />
+            <TableColumn fx:id="Description" prefWidth="140.0" text="Description" />
+            <TableColumn fx:id="Price" prefWidth="70.0" text="Price" />
+            <TableColumn fx:id="QuantityInStock" prefWidth="92.0" text="QuantityInStock" />
+        </columns>
+      </TableView>
+      <Label fx:id="Search" layoutX="145.0" prefHeight="37.0" prefWidth="86.0" text="search">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="SearchBar" layoutX="221.0" layoutY="6.0" prefHeight="26.0" prefWidth="236.0" promptText="Keywords..." />
+      <AnchorPane layoutY="48.0" prefHeight="353.0" prefWidth="136.0">
+         <children>
+            <Button fx:id="batches" layoutY="7.0" mnemonicParsing="false" onAction="#batchesButton" prefHeight="37.0" prefWidth="130.0" text="batches ">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="logOut" layoutX="7.0" layoutY="313.0" mnemonicParsing="false" onAction="#logOut" prefHeight="26.0" prefWidth="119.0" text="log out">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button fx:id="productLocations" layoutY="63.0" mnemonicParsing="false" onAction="#productLocations" prefHeight="37.0" prefWidth="130.0" text="product locations" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="add" layoutX="476.0" layoutY="6.0" mnemonicParsing="false" onAction="#addButton" prefHeight="26.0" prefWidth="111.0" text="add" textFill="#2c2929" />
+      <Button fx:id="buysell" layoutY="6.0" mnemonicParsing="false" onAction="#buysellButton" prefHeight="37.0" prefWidth="130.0" text="buy/sell">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
