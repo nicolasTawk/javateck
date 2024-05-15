@@ -14,16 +14,18 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.List;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
-/**
- * Controller class for the main product list view.
- */
 public class listController implements Initializable {
 
     @FXML
@@ -44,94 +46,73 @@ public class listController implements Initializable {
     private Button add;
 
     // Observable list to hold products for searching
-    ObservableList<product> productSearchModel0bservableList = FXCollections.observableArrayList();
+    ObservableList<product> productSearchModelObservableList = FXCollections.observableArrayList();
 
     // Instance of the main application
     HelloApplication h = new HelloApplication();
 
-    /**
-     * Method to switch to the product locations view.
-     * @param event Action event
-     * @throws Exception If switching scene fails
-     */
     public void productLocations(ActionEvent event) throws Exception {
         h.changeScene("productLocations.fxml");
     }
 
-    /**
-     * Method to log out from the application.
-     * @param event Action event
-     * @throws Exception If switching scene fails
-     */
     public void logOut(ActionEvent event) throws Exception {
         h.changeScene("hello-view.fxml");
     }
 
-    /**
-     * Method to switch to the add product view.
-     * @param event Action event
-     * @throws Exception If switching scene fails
-     */
     public void addButton(ActionEvent event) throws Exception {
         h.changeScene("addButton.fxml");
     }
 
-    /**
-     * Method to switch to the buy/sell product view.
-     * @param event Action event
-     * @throws Exception If switching scene fails
-     */
     public void buysellButton(ActionEvent event) throws Exception {
         h.changeScene("buyButton.fxml");
     }
 
-    /**
-     * Method to switch to the batches view.
-     * @param event Action event
-     * @throws Exception If switching scene fails
-     */
     public void batchesButton(ActionEvent event) throws Exception {
         h.changeScene("batches.fxml");
     }
 
-    /**
-     * Initializes the controller class.
-     * @param url The location used to resolve relative paths for the root object, or null if the location is not known.
-     * @param resourceBundle The resources used to localize the root object, or null if the root object was not localized.
-     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        // Establishing database connection
-        ConnectionManager connection = new ConnectionManager();
-        String query = "SELECT ProductID, Name, Description, Price, QuantityInStock FROM Product";
-
         try {
-            // Executing query to fetch product data
-            ResultSet queryOutput = connection.executeQuery(query);
+            // Fetch product data from REST API
+            URL apiUrl = new URL("http://localhost:8080/api/products");
+            HttpURLConnection conn = (HttpURLConnection) apiUrl.openConnection();
+            conn.setRequestMethod("GET");
+            conn.setRequestProperty("Accept", "application/json");
 
-            // Populating product list with query results
-            while (queryOutput.next()) {
-                Integer queryProductID = queryOutput.getInt("ProductID");
-                String queryName = queryOutput.getString("Name");
-                String queryDescription = queryOutput.getString("Description");
-                Double queryPrice = queryOutput.getDouble("Price");
-                Integer queryQuantityInStock = queryOutput.getInt("QuantityInStock");
-
-                productSearchModel0bservableList.add(new product(queryProductID, queryName, queryDescription, queryPrice, queryQuantityInStock));
+            if (conn.getResponseCode() != 200) {
+                throw new RuntimeException("Failed : HTTP error code : " + conn.getResponseCode());
             }
 
+            BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
+            StringBuilder sb = new StringBuilder();
+            String output;
+            while ((output = br.readLine()) != null) {
+                sb.append(output);
+            }
+            conn.disconnect();
+
+            String jsonResponse = sb.toString();
+
+            // Parse JSON response to list of products
+            ObjectMapper objectMapper = new ObjectMapper();
+            List<product> products = objectMapper.readValue(jsonResponse, new TypeReference<List<product>>() {});
+
+            // Add products to observable list
+            productSearchModelObservableList.addAll(products);
+
             // Setting up table columns
-            ProductID.setCellValueFactory(new PropertyValueFactory<>("ProductID"));
-            Name.setCellValueFactory(new PropertyValueFactory<>("Name"));
-            Description.setCellValueFactory(new PropertyValueFactory<>("Description"));
-            Price.setCellValueFactory(new PropertyValueFactory<>("Price"));
-            QuantityInStock.setCellValueFactory(new PropertyValueFactory<>("QuantityInStock"));
+            ProductID.setCellValueFactory(new PropertyValueFactory<>("productId"));
+            Name.setCellValueFactory(new PropertyValueFactory<>("name"));
+            Description.setCellValueFactory(new PropertyValueFactory<>("description"));
+            Price.setCellValueFactory(new PropertyValueFactory<>("price"));
+            QuantityInStock.setCellValueFactory(new PropertyValueFactory<>("quantityInStock"));
 
             // Binding filtered data to the table view
-            tableViewProduct.setItems(productSearchModel0bservableList);
+            tableViewProduct.setItems(productSearchModelObservableList);
 
             // Setting up filtering for search functionality
-            FilteredList<product> filteredData = new FilteredList<>(productSearchModel0bservableList, b -> true);
+            FilteredList<product> filteredData = new FilteredList<>(productSearchModelObservableList, b -> true);
 
             // Listening for changes in the search bar and updating the filtered data accordingly
             SearchBar.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -153,8 +134,8 @@ public class listController implements Initializable {
             // Setting the sorted data to the table view
             tableViewProduct.setItems(sortedData);
 
-        } catch (SQLException e) {
-            // Logging and handling SQL exceptions
+        } catch (IOException e) {
+            // Logging and handling IO exceptions
             Logger.getLogger(listController.class.getName()).log(Level.SEVERE, null, e);
             e.printStackTrace();
         }
