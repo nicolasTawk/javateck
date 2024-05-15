@@ -3,39 +3,47 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="n.midterm_3.addLocationButtonController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="n.midterm_3.addLocationButtonController">
    <children>
-      <Label layoutX="121.0" layoutY="39.0" prefHeight="26.0" prefWidth="129.0" text="Enter the aisle:" textAlignment="CENTER">
+      <Label layoutX="83.0" layoutY="43.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="153.0" text="Enter the aisle:" textAlignment="CENTER" textFill="#003169">
          <font>
-            <Font size="19.0" />
+            <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="121.0" layoutY="127.0" prefHeight="26.0" prefWidth="121.0" text="Enter the shelf: ">
+      <Label layoutX="83.0" layoutY="129.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="153.0" text="Enter the shelf: " textFill="#003169">
          <font>
-            <Font size="17.0" />
+            <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="121.0" layoutY="214.0" prefHeight="26.0" prefWidth="114.0" text="Enter the bin: ">
+      <Label layoutX="83.0" layoutY="202.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="153.0" text="Enter the bin: " textFill="#003169">
          <font>
-            <Font size="18.0" />
+            <Font size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="AisleTextField" layoutX="249.0" layoutY="39.0" prefHeight="26.0" prefWidth="229.0" promptText="number" />
-      <TextField fx:id="ShelfTextField" layoutX="250.0" layoutY="127.0" prefHeight="26.0" prefWidth="229.0" promptText="number.." />
-      <TextField fx:id="BinTextField" layoutX="253.0" layoutY="214.0" prefHeight="26.0" prefWidth="229.0" promptText="A1..." />
-      <Button layoutX="242.0" layoutY="285.0" mnemonicParsing="false" onAction="#addButton" prefHeight="38.0" prefWidth="114.0" text="add">
+      <TextField fx:id="AisleTextField" layoutX="280.0" layoutY="55.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="206.0" promptText="Number" style="-fx-background-color: transparent; -fx-border-color: transparent transparent  #003169 transparent; -fx-border-width: 0 0 2 0;" />
+      <TextField fx:id="ShelfTextField" layoutX="280.0" layoutY="137.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="206.0" promptText="Number.." style="-fx-background-color: transparent; -fx-border-color: transparent transparent  #003169 transparent; -fx-border-width: 0 0 2 0;" />
+      <TextField fx:id="BinTextField" layoutX="280.0" layoutY="214.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="206.0" promptText="A1..." style="-fx-background-color: transparent; -fx-border-color: transparent transparent  #003169 transparent; -fx-border-width: 0 0 2 0;" />
+      <Button layoutX="224.0" layoutY="283.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addButton" prefHeight="31.0" prefWidth="153.0" style="-fx-background-color: #003169;" text="Add" textFill="WHITE">
          <font>
-            <Font size="18.0" />
+            <Font size="16.0" />
          </font>
       </Button>
-      <Button layoutX="16.0" layoutY="352.0" mnemonicParsing="false" onAction="#backButton" prefHeight="38.0" prefWidth="85.0" text="back">
+      <Button layoutX="1.0" layoutY="3.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#backButton" prefHeight="26.0" prefWidth="31.0">
          <font>
             <Font size="17.0" />
          </font>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@back-icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
    </children>
 </AnchorPane>

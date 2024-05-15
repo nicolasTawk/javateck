@@ -2,13 +2,16 @@ package n.midterm_3;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 
-
-public class HelloController {
+public class HelloController{
     @FXML
     private Label wrong;
 
@@ -20,6 +23,10 @@ public class HelloController {
 
     @FXML
     private PasswordField password;
+
+
+
+
 
 
 

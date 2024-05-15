@@ -3,41 +3,49 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="n.midterm_3.buyButtonController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="n.midterm_3.buyButtonController">
    <children>
-      <Label layoutX="83.0" layoutY="43.0" prefHeight="50.0" prefWidth="153.0" text="Enter the ProductID:">
+      <Label layoutX="83.0" layoutY="43.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="153.0" text="Enter the ProductID:" textFill="#003169">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="83.0" layoutY="129.0" prefHeight="42.0" prefWidth="131.0" text="Enter the quantity:">
+      <Label layoutX="83.0" layoutY="129.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="153.0" text="Enter the quantity:" textFill="#003169">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="83.0" layoutY="202.0" prefHeight="50.0" prefWidth="166.0" text="Enter the experation date:">
+      <Label layoutX="83.0" layoutY="202.0" prefHeight="50.0" prefWidth="169.0" text="Enter the experation date:" textFill="#003169">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Button fx:id="sellButton" layoutX="312.0" layoutY="288.0" mnemonicParsing="false" onAction="#sell" prefHeight="36.0" prefWidth="91.0" text="sell">
+      <Button fx:id="sellButton" layoutX="312.0" layoutY="288.0" mnemonicParsing="false" onAction="#sell" prefHeight="31.0" prefWidth="153.0" style="-fx-background-color: #003169;" text="Sell" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Button fx:id="backButton" layoutX="14.0" layoutY="350.0" mnemonicParsing="false" onAction="#back" prefHeight="36.0" prefWidth="91.0" text="back">
+      <Button fx:id="backButton" layoutX="1.0" layoutY="3.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#back" prefHeight="26.0" prefWidth="31.0" style="-fx-background-color: transparent;">
          <font>
             <Font size="16.0" />
          </font>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@back-icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
-      <TextField fx:id="ProductIDText" layoutX="280.0" layoutY="55.0" prefHeight="26.0" prefWidth="206.0" promptText="ID..." />
-      <TextField fx:id="quantityText" layoutX="280.0" layoutY="137.0" prefHeight="26.0" prefWidth="206.0" promptText="quantity.." />
-      <TextField fx:id="experationDateText" layoutX="280.0" layoutY="214.0" prefHeight="26.0" prefWidth="206.0" promptText="YYYY-MM-DD" />
-      <Button fx:id="buyButton" layoutX="191.0" layoutY="288.0" mnemonicParsing="false" onAction="#buy" prefHeight="36.0" prefWidth="91.0" text="buy">
+      <TextField fx:id="ProductIDText" layoutX="280.0" layoutY="55.0" prefHeight="26.0" prefWidth="206.0" promptText="ID..." style="-fx-background-color: transparent; -fx-border-color: transparent transparent #003169 transparent; -fx-border-width: 0 0 2 0;" />
+      <TextField fx:id="quantityText" layoutX="280.0" layoutY="137.0" prefHeight="26.0" prefWidth="206.0" promptText="Quantity.." style="-fx-background-color: transparent; -fx-border-color: transparent transparent #003169 transparent; -fx-border-width: 0 0 2 0;" />
+      <TextField fx:id="experationDateText" layoutX="280.0" layoutY="214.0" prefHeight="26.0" prefWidth="206.0" promptText="YYYY-MM-DD" style="-fx-background-color: transparent; -fx-border-color: transparent transparent #003169 transparent; -fx-border-width: 0 0 2 0;" />
+      <Button fx:id="buyButton" layoutX="129.0" layoutY="288.0" mnemonicParsing="false" onAction="#buy" prefHeight="31.0" prefWidth="153.0" style="-fx-background-color: #003169;" text="Buy" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>

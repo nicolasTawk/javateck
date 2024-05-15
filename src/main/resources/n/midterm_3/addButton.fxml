@@ -3,39 +3,47 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="n.midterm_3.addButtonController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="n.midterm_3.addButtonController">
    <children>
-      <Label layoutX="112.0" layoutY="50.0" prefHeight="23.0" prefWidth="117.0" text="Enter the name: ">
+      <Label layoutX="83.0" layoutY="43.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="153.0" text="Enter the name: " textFill="#003169">
          <font>
-            <Font size="17.0" />
+            <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="108.0" layoutY="126.0" prefHeight="23.0" prefWidth="153.0" text="Enter the description:">
+      <Label layoutX="83.0" layoutY="129.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="153.0" text="Enter the description:" textFill="#003169">
          <font>
-            <Font size="17.0" />
+            <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="108.0" layoutY="200.0" prefHeight="23.0" prefWidth="117.0" text="Enter the price: ">
+      <Label layoutX="82.0" layoutY="202.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="153.0" text="Enter the price: " textFill="#003169">
          <font>
-            <Font size="17.0" />
+            <Font size="15.0" />
          </font>
       </Label>
-      <Button fx:id="add" layoutX="285.0" layoutY="285.0" mnemonicParsing="false" onAction="#addButton" prefHeight="38.0" prefWidth="117.0" text="add">
+      <Button fx:id="add" layoutX="224.0" layoutY="283.0" mnemonicParsing="false" onAction="#addButton" prefHeight="31.0" prefWidth="153.0" style="-fx-background-color: #003169;" text="Add" textFill="WHITE">
          <font>
-            <Font size="19.0" />
+            <Font size="16.0" />
          </font>
       </Button>
-      <TextField fx:id="nameTextLable" layoutX="261.0" layoutY="49.0" prefHeight="26.0" prefWidth="312.0" />
-      <TextField fx:id="descriptionTextLable" layoutX="261.0" layoutY="125.0" prefHeight="26.0" prefWidth="312.0" />
-      <TextField fx:id="priceTextLable" layoutX="261.0" layoutY="199.0" prefHeight="26.0" prefWidth="312.0" />
-      <Button fx:id="back" layoutX="144.0" layoutY="285.0" mnemonicParsing="false" onAction="#backButton" prefHeight="38.0" prefWidth="117.0" text="back">
+      <TextField fx:id="nameTextLable" layoutX="280.0" layoutY="55.0" prefHeight="26.0" prefWidth="206.0" promptText="Name " style="-fx-background-color: transparent; -fx-border-color: transparent transparent  #003169 transparent; -fx-border-width: 0 0 2 0;" />
+      <TextField fx:id="descriptionTextLable" layoutX="280.0" layoutY="137.0" prefHeight="26.0" prefWidth="206.0" promptText="Description" style="-fx-background-color: transparent; -fx-border-color: transparent transparent  #003169 transparent; -fx-border-width: 0 0 2 0;" />
+      <TextField fx:id="priceTextLable" layoutX="280.0" layoutY="214.0" prefHeight="26.0" prefWidth="206.0" promptText="Price" style="-fx-background-color: transparent; -fx-border-color: transparent transparent  #003169 transparent; -fx-border-width: 0 0 2 0;" />
+      <Button fx:id="back" layoutX="1.0" layoutY="3.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#backButton" prefHeight="26.0" prefWidth="31.0" style="-fx-background-color: transparent;">
          <font>
             <Font size="20.0" />
          </font>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@back-icon.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
    </children>
 </AnchorPane>

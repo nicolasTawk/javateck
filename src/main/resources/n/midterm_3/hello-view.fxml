@@ -12,25 +12,25 @@
 
 <BorderPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="n.midterm_3.HelloController">
     <left>
-        <AnchorPane prefHeight="400.0" prefWidth="268.0" style="-fx-background-color: #7fffd4;" BorderPane.alignment="CENTER">
-            <children>
-                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="27.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../../../java/img/pharmacy_3.jpeg" />
-                    </image>
-                </ImageView>
-            </children>
+        <AnchorPane prefHeight="400.0" prefWidth="268.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="logInImage" fitHeight="400.0" fitWidth="270.0" layoutX="-1.0" pickOnBounds="true">
+               <image>
+                  <Image url="@parma1.jpeg" />
+               </image>
+            </ImageView>
+         </children>
         </AnchorPane>
     </left>
     <center>
-        <AnchorPane prefHeight="400.0" prefWidth="319.0" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="400.0" prefWidth="319.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
             <children>
-                <TextField fx:id="username" layoutX="45.0" layoutY="200.0" prefHeight="26.0" prefWidth="281.0" promptText="Username" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="74.0" AnchorPane.topAnchor="200.0" />
-                <PasswordField fx:id="password" promptText="Password" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="74.0" AnchorPane.topAnchor="245.0" />
-                <Button fx:id="login" layoutX="118.0" layoutY="300.0" onAction="#userLogin" prefHeight="18.0" prefWidth="166.0" style="-fx-background-color: #7fffd4;" text="Login" textFill="#6b3d3d" AnchorPane.leftAnchor="118.0" AnchorPane.rightAnchor="116.0" AnchorPane.topAnchor="300.0" />
-                <Label alignment="TOP_LEFT" layoutX="4.0" layoutY="66.0" lineSpacing="3.0" prefHeight="78.0" prefWidth="330.0" style="-fx-font-size: 18px;" text="WELCOME TO PHARMACY STORAGE MANAGEMENT SYSTEM" textFill="#6b3d3d" underline="true" wrapText="true">
+                <TextField fx:id="username" layoutX="45.0" layoutY="200.0" prefHeight="26.0" prefWidth="281.0" promptText="Username" style="-fx-background-color: transparent; -fx-border-color: transparent transparent #003169  transparent; -fx-border-width: 0  0 2 0; -fx-text-fill: #003169;" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="74.0" AnchorPane.topAnchor="200.0" />
+                <PasswordField fx:id="password" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: transparent transparent #003169 transparent; -fx-border-width: 0 0 2 0; -fx-text-fill: #003169; -fx-font-size: 13px;" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="74.0" AnchorPane.topAnchor="245.0" />
+                <Button fx:id="login" layoutX="103.0" layoutY="305.0" onAction="#userLogin" prefHeight="18.0" prefWidth="166.0" style="-fx-background-color: #003169;" text="Login" textFill="WHITE" AnchorPane.leftAnchor="103.0" AnchorPane.rightAnchor="131.0" AnchorPane.topAnchor="305.0" />
+                <Label alignment="TOP_LEFT" ellipsisString="" layoutX="4.0" layoutY="66.0" lineSpacing="3.0" prefHeight="78.0" prefWidth="330.0" style="-fx-font-size: 18px;" text=" PHARMACY STORAGE MANAGEMENT SYSTEM" textAlignment="CENTER" textFill="#003169" textOverrun="CLIP" wrapText="true">
                     <font>
-                        <Font name="Al Nile" size="31.0" />
+                        <Font name="Arial Black" size="41.0" />
                     </font>
                 </Label>
                 <Label fx:id="wrong" alignment="CENTER" layoutX="1.0" layoutY="331.0" prefHeight="69.0" prefWidth="336.0" textFill="#e80404">
